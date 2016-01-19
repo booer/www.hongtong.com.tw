@@ -1,0 +1,49 @@
+<%= render 'admin/common/header' %>
+<section>
+  <%= render 'admin/common/leftpanel' %>
+
+  <div class="mainpanel">
+    <div class="contentpanel">
+      <!-- content goes here... -->
+      <div class="panel">            
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-hover nomargin">
+              <thead>
+                <tr>
+                  <th>頁面</th>
+                  <th>縮圖</th>
+                  <th class="text-right">最後更新日期</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @aimgs.each do |f| %>
+                <tr>
+                  <% if f.page == 1 %>
+                    <td>關於我們</td>
+                  <% else %>
+                    <td>歷史沿革</td>
+                  <% end %>
+                  <% if f.image.blank? %>
+                    <td><%= link_to '上傳', edit_admin_about_image_path(f) %></td>
+                  <% else %>
+                    <td>
+                    <%= link_to edit_admin_about_image_path(f) do  %>
+                      <%= image_tag f.image_url(:image_s).to_s %>
+                    <% end %>
+                    </td>
+                  <% end %>
+                  <td class="text-right"><%= f.updated_at %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div><!-- table-responsive -->
+        </div>
+      </div>      
+      <!-- content goes here... -->
+      <!-- content goes here... -->
+    </div><!-- contentpanel -->
+  </div><!-- mainpanel -->
+</section>
+

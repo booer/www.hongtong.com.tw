@@ -1,0 +1,30 @@
+<section class="section white">
+	<div class="container">
+		<div id="page-wrapper" class="row">
+			<div id="content" class="col-md-12 col-sm-12 col-xs-12">
+				<div class="blog-wrapper">
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="media-element">
+								<%= image_tag @post.image_url(:post_banner).to_s, class: 'img-responsive' %>
+							</div><!-- end blog-image -->
+						</div><!-- end col -->
+					</div>
+					<div class="blog-time">
+						<h3><%= @post.created_at.strftime('%d').to_s %></h3>
+						<p><%= @post.created_at.strftime('%Y-%m ').to_s %></p>
+					</div><!-- blog-time -->
+							
+					<div class="blog-title">
+						<h4><%= @post.title %></h4>
+
+						<%= @post.content.html_safe %>
+					</div><!-- end blog-title -->
+				</div><!-- end blog-wrapper -->
+
+				
+
+			</div><!-- end content -->
+		</div><!-- end row -->
+	</div><!-- end container -->
+</section><!-- end section -->

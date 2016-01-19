@@ -1,0 +1,69 @@
+<div class="leftpanel">
+  <div class="leftpanelinner">
+
+    <!-- ################## LEFT PANEL PROFILE ################## -->
+
+    <ul class="nav nav-tabs nav-justified nav-sidebar">
+      <li class="tooltips active" data-toggle="tooltip" title="Main Menu"><a data-toggle="tab" data-target="#mainmenu"><i class="tooltips fa fa-ellipsis-h"></i></a></li>
+      <li class="tooltips" data-toggle="tooltip" title="Contacts"><a data-toggle="tab" data-target="#contactmenu"><i class="fa fa-user"></i></a></li>
+      <li class="tooltips" data-toggle="tooltip" title="Log Out">
+        <%= link_to admin_login_path do %><i class="fa fa-sign-out"></i><% end %>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+
+      <!-- ################# MAIN MENU ################### -->
+
+      <div class="tab-pane active" id="mainmenu">
+        <h5 class="sidebar-title">靜態頁面</h5>
+        <ul class="nav nav-pills nav-stacked nav-quirk">
+          <li class="nav-parent active"><a href=""><i class="fa fa-home"></i> <span>關於我們</span></a>
+            <ul class="children">
+              <li>
+                <%= link_to '左側輪播圖', admin_about_images_path %>
+              </li>
+              <li> <%= link_to '公司介紹', edit_admin_page_path('1')  %></li>
+              <li> <%= link_to '公司沿革', edit_admin_page_path('2')  %></li>
+              <li> <%= link_to '站台設定', edit_admin_site_path('1')  %></li>
+            </ul>
+          </li>
+        </ul>
+        <h5 class="sidebar-title">動態頁面</h5>
+        <ul class="nav nav-pills nav-stacked nav-quirk">
+          <li>
+            <%= link_to admin_posts_path do %><i class="fa fa-bolt"></i> <span>最新消息</span><% end %>
+          </li>
+          <li>
+            <%= link_to admin_products_path do %><i class="fa fa-cube"></i> <span>商品管理</span><% end %>
+          </li>
+          <li>
+            <%= link_to admin_services_path do %><i class="fa fa-wrench"></i> <span>公司特色</span><% end %>
+          </li>
+          <li>
+            <%= link_to admin_letters_path do %><i class="fa fa-comment-o"></i> <span>訪客訊息</span><% end %>
+          </li>
+        </ul>
+      </div><!-- tab-pane -->
+
+      <!-- ################### CONTACT LIST ################### -->
+
+      <div class="tab-pane" id="contactmenu">
+        <h5 class="sidebar-title">其他功能/頁面擴充，請聯繫</h5>
+        <ul class="media-list media-list-contacts">
+          <li class="media">
+            <a href="#">
+              <div class="media-left">
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">窗口-呂靜婷</h4>
+                <span><i class="fa fa-phone"></i> 0976683829</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div><!-- tab-pane -->
+    </div><!-- tab-content -->
+
+  </div><!-- leftpanelinner -->
+</div><!-- leftpanel -->

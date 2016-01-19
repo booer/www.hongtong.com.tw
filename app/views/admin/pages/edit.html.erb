@@ -1,0 +1,19 @@
+<%= render 'admin/common/header' %>
+<section>
+  <%= render 'admin/common/leftpanel' %>
+  <div class="mainpanel">
+    <div class="contentpanel">
+      <%= bootstrap_form_for [:admin, @page] do |e| %>
+        <%= e.text_area :page_cn, label: '中文版', class: 'textarea' %>
+        <%= e.text_area :page_en, label: '英文版', class: 'textarea' %>
+        <%= e.submit '送出', class: 'btn btn-success' %>
+      <% end %>
+      <!-- content goes here... -->
+
+    </div><!-- contentpanel -->
+  </div><!-- mainpanel -->
+
+</section>
+<script type="text/javascript">
+  $('.textarea').wysihtml5({toolbar: { color: true } });
+</script>

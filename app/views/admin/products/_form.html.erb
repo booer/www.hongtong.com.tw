@@ -1,0 +1,44 @@
+<%= bootstrap_form_for [:admin, @product] do |e| %>
+	<div class="panel-body col-md-6">
+	  <div class="form-group">
+			<%= e.text_field :pname, label: '產品名稱' %>
+		</div>
+		<div class="form-group">
+			<%= e.text_area :feature, label: '產品特性' %>
+		</div>
+		<div class="form-group">
+			<%= e.text_area :desc, label: '產品敘述' %>
+		</div>
+		<div class="form-group">
+			<%= e.text_area :detail, label: '產品用途' %>
+		</div>
+		<%= e.file_field :imagea, label: '產品輪播圖' %>
+		<%= e.file_field :imageb, label: '產品輪播圖' %>
+	</div>
+	<div class="panel-body col-md-6">
+	  <div class="form-group">
+			<%= e.text_field :pname_en, label: '產品名稱(英)' %>
+		</div> 
+		<div class="form-group">
+			<%= e.text_area :feature_en, label: '產品特性(英)' %>
+		</div>
+		<div class="form-group">
+			<%= e.text_area :desc_en, label: '產品敘述(英)' %>
+		</div>
+		<div class="form-group">
+			<%= e.text_area :detail_en, label: '產品用途(英)' %>
+		</div>
+		<%= e.file_field :imagec, label: '產品輪播圖' %>
+		<%= e.file_field :imaged, label: '產品輪播圖' %>
+	</div>
+	<div class="col-md-12"><h3>最終完成品</h3><hr></div>
+	<div class="panel-body">
+		<div class="row">
+			<%= e.fields_for :finalimgs do |finalimg| %>
+				<%= render 'finalimg_fields', f: finalimg %>
+			<% end %>
+		</div>
+		<%= link_to_add_association '增加完成品', e, :finalimgs, class: 'btn btn-info' %>
+	</div>
+	<%= e.submit '送出', class: 'btn btn-success' %>
+<% end %>

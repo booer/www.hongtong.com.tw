@@ -1,0 +1,23 @@
+<header>
+  <div class="headerpanel">
+
+    <div class="logopanel">
+      <h2><%= link_to 'Quirk', admin_root_path %></h2>
+    </div><!-- logopanel -->
+
+    <div class="headerbar">
+      <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+      <div class="header-right">
+        <ul class="headermenu">
+          <li>
+            <div id="noticePanel" class="btn-group">
+              <%= link_to root_url, class: :'btn btn-notice', target: :'_blank', title: :'瀏覽網站' do %>
+                <i class="fa fa-globe"></i>
+              <% end %>
+            </div>
+          </li>
+        </ul>
+      </div><!-- header-right -->
+    </div><!-- headerbar -->
+  </div><!-- header-->
+</header>

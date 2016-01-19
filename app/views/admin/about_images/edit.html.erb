@@ -1,0 +1,21 @@
+<%= render 'admin/common/header' %>
+<section>
+  <%= render 'admin/common/leftpanel' %>
+  <div class="mainpanel">
+    <div class="contentpanel">
+      <div class="panel">
+        <div class="panel-body">
+          <%= bootstrap_form_for [:admin, @aimg] do |e| %>
+            
+						<div class="form-group">
+            <%= image_tag @aimg.image_url(:image_s).to_s %><br>
+							 <%= e.file_field :image, label: '更換此圖為' %>
+						</div>
+						<%= e.submit '送出', class: 'btn btn-success' %>
+					<% end %>
+          <!-- content goes here... -->
+        </div><!-- contentpanel -->
+      </div>
+    </div>
+  </div><!-- mainpanel -->
+</section>

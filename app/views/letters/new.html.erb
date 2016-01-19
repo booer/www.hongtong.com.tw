@@ -1,0 +1,74 @@
+<section class="section white">
+	<div class="container">
+		<div class="section-title text-center">
+			<h4>聯絡我們</h4>
+			<hr>
+			<p>We Wanna Hear From You </p>
+		</div><!-- end title -->
+
+		<div class="row">
+			<div class="col-md-8 col-sm-8 col-xs-12">
+				<div class="contact_form comment-form-wrap wow fadeIn">
+					<div id="message"></div>
+					<%= bootstrap_form_for @letter do |f| %>
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<%= f.text_field :personal_name, label: '姓名', class: 'form-control', placeholder: '輸入您的姓名' %>
+						</div>				
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<%= f.text_field :company_name, label: '公司名稱', class: 'form-control', placeholder: '輸入公司名稱' %>
+						</div>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<%= f.text_field :mail, label: 'E-mail', class: 'form-control', placeholder: '輸入E-mail' %>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<%= f.text_field :company_address, label: '公司地址', class: 'form-control', placeholder: '輸入公司地址' %>
+						</div>
+
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<%= f.text_field :tel, label: '連絡電話', class: 'form-control', placeholder: '連絡電話' %>
+						</div>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<%= f.text_area :msg, label: '您要輸入的訊息是？' %>
+							<%= f.submit '送出', class: 'btn btn-primary btn-block', id: 'submit' %>
+						</div>
+					<% end %>
+				</div>
+			</div><!-- end col -->
+			<div class="col-md-4 col-sm-4 col-xs-12">
+				<div class="contact-info">
+					<h4>聯絡資訊</h4>
+
+						<div class="service-style-2 icon-left row wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+							<div class="col-md-2">
+								<i class="fa fa-envelope"></i>
+							</div>
+							<div class="col-md-10 nopadding">
+								<p>地址:<%= @site.address %></p>
+								<span>mail- <%= @site.mail %></span>
+								<span>tel- <%= @site.tel%> / fax- <%= @site.fax%></span>
+							</div>
+						</div><!-- end service -->
+
+					<div class="clearfix"></div>
+
+					<h4>營業時間</h4>
+
+						<div class="service-style-2 icon-left row wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+							<div class="col-md-2 ">
+								<i class="fa fa-clock-o"></i>
+							</div>
+							<div class="col-md-10 nopadding">
+							<p>Monday – Friday : 9am to 20 pm<br>
+							Saturday : 9am to 17 pm<br>
+							Sunday : day off</p>
+							</div>
+						</div><!-- end service -->
+
+				</div><!-- end contact info -->
+			</div><!-- end col -->
+		</div><!-- end row -->
+	</div><!-- end container -->
+</section><!-- end section -->
+
+<section class="framesection">
+</section><!-- end framesection -->

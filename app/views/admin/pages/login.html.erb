@@ -1,0 +1,36 @@
+<div class="sign-overlay"></div>
+<div class="signpanel"></div>
+
+<div class="panel signin">
+  <div class="panel-heading">
+    <h1>管理者後台</h1>
+    <!-- <h4 class="panel-title">.</h4> -->
+  </div>
+  <div class="panel-body">
+    <%= link_to 'Connect with Facebook', admin_root_url, class: :"btn btn-primary btn-quirk btn-fb btn-block" %>
+    <div class="or">或</div>
+    <form action="index.html">
+      <div class="form-group mb10">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <input type="text" class="form-control" placeholder="輸入管理員帳號">
+        </div>
+      </div>
+      <div class="form-group nomargin">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input type="text" class="form-control" placeholder="輸入管理員密碼">
+        </div>
+      </div>
+      <!-- <div><a href="" class="forgot">Forgot password?</a></div> -->
+      <br>
+      <div class="form-group">
+        <%= link_to 'Sign In', admin_root_url, class: :"btn btn-success btn-quirk btn-block" %>
+      </div>
+    </form>
+    <hr class="invisible">
+		<!-- <div class="form-group">
+      <a href="signup.html" class="btn btn-default btn-quirk btn-stroke btn-stroke-thin btn-block btn-sign">Not a member? Sign up now!</a>
+    </div> -->
+  </div>
+</div><!-- panel -->

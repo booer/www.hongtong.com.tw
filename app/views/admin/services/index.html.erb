@@ -1,0 +1,46 @@
+<%= render 'admin/common/header' %>
+<section>
+  <%= render 'admin/common/leftpanel' %>
+
+  <div class="mainpanel">
+    <div class="contentpanel">      
+      <!-- content goes here... -->
+      <div class="panel">            
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-hover nomargin">
+              <thead>
+                <tr>
+                  <th style="width:40%;">標題</th>
+                  <th style="width:40%;">描述(字數上限70個字)</th>
+                  <th>語系</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @srvs.each do |f| %>
+                <tr>
+                  <td><%= f.title %></td>
+                  <td><%= f.desc %></td>
+                  <% if f.lang.present? %>
+                    <td>中文</td>
+                  <% else %>
+                    <td>英文</td>
+                  <% end %>
+                  <td>
+                    <ul class="table-options">
+                      <li>
+                      <%= link_to edit_admin_service_path(f.id) do %><i class="fa fa-pencil"></i><% end %>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div><!-- table-responsive -->
+        </div>
+      </div>
+    </div><!-- contentpanel -->
+  </div><!-- mainpanel -->
+</section>

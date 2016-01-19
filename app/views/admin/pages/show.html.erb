@@ -1,0 +1,19 @@
+<%= render 'admin/common/header' %>
+<section>
+  <%= render 'admin/common/leftpanel' %>
+
+  <div class="mainpanel">
+    <div class="contentpanel">
+      <div class="panel">            
+        <div class="panel-body">
+          <%= link_to '輪播圖庫', new_admin_post_path %>
+        </div>
+      </div>  
+      <%= bootstrap_form_for [:admin, @page] do |e| %>
+        <%= e.text_area :about_cn %>
+        <%= e.text_area :about_en %>
+      <% end %>
+      <!-- content goes here... -->
+    </div><!-- contentpanel -->
+  </div><!-- mainpanel -->
+</section>

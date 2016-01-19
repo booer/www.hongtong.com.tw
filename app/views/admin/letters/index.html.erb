@@ -1,0 +1,42 @@
+<%= render 'admin/common/header' %>
+<section>
+  <%= render 'admin/common/leftpanel' %>
+
+  <div class="mainpanel">
+    <div class="contentpanel">      
+      <!-- content goes here... -->
+      <div class="panel">            
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-hover nomargin">
+              <thead>
+                <tr>
+                  <th style="width:20%;">留言者</th>
+                  <th style="width:20%;">信箱</th>
+                  <th>內容</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @letters.each do |f| %>
+                <tr>
+                  <td><%= f.personal_name %></td>
+                  <td><%= f.mail %></td>
+                  <td><%= f.msg %></td>
+                  <td>
+                    <ul class="table-options">
+                      <li>
+                      <%= link_to admin_letter_path(f.id) do %><i class="fa fa-pencil"></i><% end %>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div><!-- table-responsive -->
+        </div>
+      </div>
+    </div><!-- contentpanel -->
+  </div><!-- mainpanel -->
+</section>

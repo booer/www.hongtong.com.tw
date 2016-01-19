@@ -1,0 +1,32 @@
+<section class="section white">
+	<div class="container">
+
+		<!-- <div class="portfolio-filter text-center">
+		<a href="#" class="filter active" data-filter="*">All</a>
+		<a href="#" class="filter" data-filter=".cat1">Photography</a>
+		<a href="#" class="filter" data-filter=".cat2">Design</a>
+		<a href="#" class="filter" data-filter=".cat3">Development</a>
+		<a href="#" class="filter" data-filter=".cat4">Branding</a>
+		</div> -->   
+
+	<ul class="portfolio-grid portfolio-gallery-3 clearfix masonry" id="portfolio-grid">
+		<% @products.each do |f| %>
+		<li class="portfolio-item mix cat1">
+			<div class="portfolio-style-1 entry wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+				<%= image_tag f.imagea_url(:product_list_s).to_s %>
+				<div class="magnifier">
+					<div class="visible-title">
+						<h4><%= link_to f.pname, product_path(f) %></h4>
+					</div><!-- end visible-title -->
+				</div><!-- end magnifier -->
+			</div><!-- end portfolio -->
+		</li>
+		<% end %>
+	</ul><!-- end row -->
+	<!-- <div class="button-wrapper text-center">
+		<a href="#" class="btn btn-primary border-radius btn-lg btn-dark">More Portfolio Items</a> 
+	</div> -->
+	<!-- end button wrapper -->
+	</div>
+</section><!-- end section -->
+

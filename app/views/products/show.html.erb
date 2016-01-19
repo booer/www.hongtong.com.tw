@@ -1,0 +1,118 @@
+<section class="pageheader lighthead box-shadow grey">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9">
+				<h1><%= @product.pname %></h1>
+			</div>
+			<div class="col-md-3">
+        <ol class="breadcrumb text-right">
+          <li><%=link_to '首頁', index_path %></li>
+          <li class="active">產品詳細說明</li>
+        </ol>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section white">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-sm-8">
+				<div class="media-element">
+					<div id="myCarousel" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner" role="listbox">
+							<div class="item active">
+								<%= image_tag @product.imagea_url(:info_banner).to_s, class: 'img-responsive' %>
+							</div>
+							<% if @product.imageb.present? %>
+								<div class="item">
+									<%= image_tag @product.imageb_url(:info_banner).to_s, class: 'img-responsive' %>
+								</div>
+							<% end %>
+							<% if @product.imagec.present? %>
+								<div class="item">
+									<%= image_tag @product.imagec_url(:info_banner).to_s, class: 'img-responsive' %>
+								</div>
+							<% end %>
+							<% if @product.imaged.present? %>
+								<div class="item">
+									<%= image_tag @product.imaged_url(:info_banner).to_s, class: 'img-responsive' %>
+								</div>
+							<% end %>
+						</div>
+
+						<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+							<span class="fa fa-angle-left" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+							<span class="fa fa-angle-right" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+				</div><!-- end blog-image -->
+			</div>
+
+			<div class="col-md-4 col-sm-4">
+				<div class="portfolio-widget-title green">
+					<h3><span><font color="gray"><i class="fa fa-camera"></i></span> 產品敘述 :</h3>
+					<hr>
+				</div>
+				<div class="portfolio-description">
+					<p><%= @product.desc %></p>
+				</div><!-- end desc -->	
+
+				<br>
+
+				<div class="portfolio-widget-title green">
+					<h3><span><font color="gray"><i class="fa fa-info"></i></span> 產品特性 :</h3>
+					<hr>
+				</div>
+				<div class="portfolio-description">
+					<p><%= @product.feature %></p>
+				</div><!-- end desc -->	
+
+				<br>
+
+				<div class="portfolio-widget-title green">
+					<h3><span><font color="gray"><i class="fa fa-link"></i></span> 產品用途 :</h3>
+					<hr>
+				</div>
+				<div class="portfolio-description">
+					<p><%= @product.detail %></p>
+				</div><!-- end desc -->	
+			</div><!-- end col -->
+
+		</div><!-- end row -->
+	</div><!-- end container -->
+</section><!-- end section -->
+
+<section class="section grey box-shadow">
+	<div class="container">
+		<div class="section-title text-center">
+			<h4>最終完成品</h4>
+			<hr>
+		</div><!-- end title -->
+		<div class="row">
+		<% @pdts.each do |pdt| %>
+			<% if pdt.img.present? %>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="portfolio-style-1 entry wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+						<%= image_tag pdt.img_url(:info_r).to_s, class: 'img-responsive' %>
+						<div class="magnifier">
+							<div class="visible-title1 clearfix">
+								<span class="pull-left">
+									<a data-rel="prettyPhoto" href="#"><i class="fa fa-search"></i></a>
+								</span>									
+							</div><!-- end visible-title -->
+						</div><!-- end magnifier -->
+					</div><!-- end portfolio -->
+					<div class="invisible-title text-center">
+						<h4></h4>
+					</div><!-- end visible-title -->
+				</div>
+			<% end %>	
+		<% end %>
+		</div><!-- end row -->
+	</div><!-- end container -->
+</section><!-- end section -->

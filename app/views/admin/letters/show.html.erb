@@ -1,0 +1,20 @@
+<%= render 'admin/common/header' %>
+<section>
+  <%= render 'admin/common/leftpanel' %>
+
+  <div class="mainpanel">
+    <div class="contentpanel">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">留言者：<%= @letter.personal_name %></h3>
+        </div>
+        <div class="panel-body">
+          留言內容：<%= @letter.msg %>
+        </div>
+      </div>
+      <%= link_to '返回', admin_letters_path,  class: 'btn btn-success' %>
+      <!-- content goes here... -->
+    </div><!-- contentpanel -->
+  </div><!-- mainpanel -->
+</section>
+

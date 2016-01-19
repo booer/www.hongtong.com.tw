@@ -1,0 +1,46 @@
+<section class="section white">
+	<div class="container">
+		<div class="section-title text-center">
+			<h4>公司沿革</h4>
+			<hr>
+		</div><!-- end title -->
+
+		<br>
+
+		<div class="row">
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<div class="media-element">
+					<div id="myCarousel" class="carousel slide" data-ride="carousel">
+							<div class="carousel-inner" role="listbox">
+							<% @aimgs.each do |f| %>
+								<% if f.id == 1  %>
+									<div class="item active">
+										<%= image_tag f.image_url(:page).to_s, class: 'img-responsive' %>
+									</div>
+								<% else %>
+									<div class="item">
+										<%= image_tag f.image_url(:page).to_s, class: 'img-responsive' %>
+									</div>
+								<% end %>
+							<% end %>
+						</div>
+
+						<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+							<span class="fa fa-angle-left" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+							<span class="fa fa-angle-right" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+				</div><!-- end blog-image -->
+			</div><!-- end col -->
+
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<!-- 塞內容 -->
+				<%= @page.page_cn.html_safe %>
+			</div><!-- end col -->
+		</div><!-- end row -->
+	</div><!-- end container -->
+</section><!-- end section -->

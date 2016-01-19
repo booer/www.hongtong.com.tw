@@ -1,0 +1,60 @@
+<%= render 'admin/common/header' %>
+<section>
+  <%= render 'admin/common/leftpanel' %>
+  <div class="mainpanel">
+    <div class="contentpanel">
+      <div class="panel">            
+        <div class="panel-body">
+          <%= link_to '新增文章', new_admin_post_path %>
+        </div>
+      </div>  
+      <!-- content goes here... -->
+      <div class="panel">            
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-hover nomargin">
+              <thead>
+                <tr>
+                  <th style="width:10%;">語系</th>
+                  <th>橫幅</th>
+                  <th>標題</th>
+                  <th class="text-right">建立日期</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @posts.each do |f| %>
+                <tr>
+                  <% if f.lang.present? %>
+                    <td>中文</td>
+                  <% else %>
+                    <td>英文</td>
+                  <% end %>
+                  <% if f.image.blank? %>
+                    <td></td>
+                  <% else %>
+                    <td><%= image_tag f.image_url(:image_s).to_s %></td>
+                  <% end %>
+                  <td><%= link_to f.title.slice(0,30), edit_admin_post_path(f) %></td>
+                  <td class="text-right"><%= f.created_at.to_formatted_s(:short) %></td>
+                  <td>
+                    <ul class="table-options">
+                      <li>
+                      <%= link_to edit_admin_post_path(f.id) do %><i class="fa fa-pencil"></i><% end %>
+                      </li>
+                      <li>
+                      <%= link_to admin_post_path(f.id), method: :'DELETE' do %><i class="fa fa-trash"></i><% end %>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div><!-- table-responsive -->
+        </div>
+      </div>      
+      <!-- content goes here... -->
+    </div><!-- contentpanel -->
+  </div><!-- mainpanel -->
+</section>

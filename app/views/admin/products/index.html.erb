@@ -1,0 +1,51 @@
+<%= render 'admin/common/header' %>
+<section>
+  <%= render 'admin/common/leftpanel' %>
+
+  <div class="mainpanel">
+    <div class="contentpanel">
+
+      <div class="panel">            
+        <div class="panel-body">
+          <%= link_to '新增產品', new_admin_product_path %>
+        </div>
+      </div>        
+      <!-- content goes here... -->
+      <div class="panel">            
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-hover nomargin">
+              <thead>
+                <tr>
+                  <th>商品名稱</th>
+                  <th>商品描述</th>
+                  <th class="text-right">date</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @products.each do |f| %>
+                <tr>
+                  <td><%= f.pname %></td>
+                  <td><%= f.desc %></td>
+                  <td class="text-right"><%= f.updated_at %></td>
+                  <td>
+                    <ul class="table-options">
+                      <li>
+                      <%= link_to edit_admin_product_path(f.id) do %><i class="fa fa-pencil"></i><% end %>
+                      </li>
+                      <li>
+                      <%= link_to admin_product_path(f.id), method: :'DELETE' do %><i class="fa fa-trash"></i><% end %>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div><!-- table-responsive -->
+        </div>
+      </div>
+    </div><!-- contentpanel -->
+  </div><!-- mainpanel -->
+</section>
