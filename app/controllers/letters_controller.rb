@@ -13,6 +13,6 @@ class LettersController < ApplicationController
 
 	private
 	def letter_params
-		params.require(:letter).permit(:personal_name, :company_name, :company_address, :mail, :tel, :msg)	
+		params.require(:letter).permit(:personal_name, :company_name, :company_address, :mail, :tel, :msg)
 	end
 end
