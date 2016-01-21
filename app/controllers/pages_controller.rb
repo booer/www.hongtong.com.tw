@@ -2,16 +2,27 @@ class PagesController < ApplicationController
 	# get /index
 	def index
 		@aimgs = AboutImage.all
-		@srvs = Service.where(lang: true)
+		if session[:lang] == 'cn'
+			@srvs = Service.where(lang: true)
+		else
+			@srvs = Service.where(lang: false)
+		end
 	end
 	# get /about
 	def about
-		@page = Page.find(1)
+		if session[:lang] == 'cn'
+			@page = Page.find(1).page_cn
+		else
+			@page = Page.find(1).page_en
+		end
 		@aimgs = AboutImage.where(page: '1')
 	end
 	def history
-		@page = Page.find(2)
+		if session[:lang] == 'cn'
+			@page = Page.find(2).page_cn
+		else
+			@page = Page.find(2).page_en
+		end
 		@aimgs = AboutImage.where(page: '2')
 	end
-
 end

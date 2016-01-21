@@ -16,7 +16,11 @@
 				<%= image_tag f.imagea_url(:product_list_s).to_s %>
 				<div class="magnifier">
 					<div class="visible-title">
-						<h4><%= link_to f.pname, product_path(f) %></h4>
+						<% if session[:lang] == 'cn' %>
+							<h4><%= link_to f.pname, product_path(f) %></h4>
+						<% else %>
+							<h4><%= link_to f.pname_en, product_path(f) %></h4>
+						<% end %>
 					</div><!-- end visible-title -->
 				</div><!-- end magnifier -->
 			</div><!-- end portfolio -->

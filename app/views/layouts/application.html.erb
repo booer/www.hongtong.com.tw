@@ -30,8 +30,16 @@
 
 						<div class="pull-right">
 							<ul class="social">
-								<li class="traditional chinese"><a href="#">中文</a></li>
-								<li class="English"><a href="#">EN</a></li>
+								<% if session[:lang]== 'cn' %>
+									<li class="traditional chinese"><a href="?lang=cn"><b>中文</b></a></li>
+								<% else %>
+									<li class="traditional chinese"><a href="?lang=cn">中文</a></li>
+								<% end %>
+								<% if session[:lang]== 'en' %>
+									<li class="English"><a href="?lang=en"><b>EN</b></a></li>
+								<% else %>
+									<li class="English"><a href="?lang=en">EN</a></li>
+								<% end %>
 							</ul>
 						</div><!-- end col -->
 					</div>

@@ -8,6 +8,15 @@ class ApplicationController < ActionController::Base
 	end
 	def setting
 		@site = Site.find_by(id: '1')
+		if params[:lang].present?
+			session[:lang] = params[:lang]
+		end
+		if session[:lang] == 'cn'
+			session[:lang] = 'cn'
+		else
+			session[:lang] = 'en'
+		end
 	end
+	
 end
 
