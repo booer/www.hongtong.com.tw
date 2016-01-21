@@ -13,8 +13,10 @@ class ApplicationController < ActionController::Base
 		end
 		if session[:lang] == 'cn'
 			session[:lang] = 'cn'
+			I18n.locale = 'zh-TW'
 		else
 			session[:lang] = 'en'
+			I18n.locale = session[:lang]
 		end
 	end
 	

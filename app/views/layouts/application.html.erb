@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>GrowthTw</title>
+  <title>宏統實業 Hong Tong Industrial</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -24,6 +24,7 @@
 								<ul class="list-inline">
 									<li><i class="fa fa-phone"></i> Call Us : <%= @site.tel %></li>
 									<li><i class="fa fa-envelope"></i> Email Us : <%= @site.mail %></li>
+									<%= t(:hello) %>
 								</ul>
 							</div><!-- end contactwrap -->
 						</div><!-- end col -->
@@ -73,7 +74,7 @@
 												<div class="navbar-cell">
 													<ul class="nav navbar-nav navbar-right">
 														<li class="dropdown yamm-fw">
-															<%=link_to '關於我們', about_path %>
+															<%=link_to t(:menu_a), about_path %>
 														<ul class="dropdown-menu">
 															<li>
 																<div class="yamm-content">
@@ -81,8 +82,8 @@
 																		<div class="col-md-12 col-xs-12 nopadding">
 																			<div class="box">
 																				<ul>
-																					<li><%=link_to '公司簡介', about_path %></li>
-																					<li><%=link_to '公司沿革', history_path %></li>
+																					<li><%=link_to t(:menu_a_a), about_path %></li>
+																					<li><%=link_to t(:menu_a_b), history_path %></li>
 																				</ul>
 																			</div><!-- end box -->
 																		</div><!-- end col -->
@@ -91,14 +92,14 @@
 															</li>
 														</ul>
 														<li class="dropdown yamm-fw">
-															<%=link_to '產品介紹', products_path %>
+															<%=link_to t(:menu_b), products_path %>
 														</li>
 														<li class="dropdown yamm-fw">
-															<%=link_to '最新消息', posts_path %>
+															<%=link_to t(:menu_c), posts_path %>
 														</li>		
 
-														<li class="dropdown yamm-fw">					
-															<%=link_to '聯絡我們', contact_path %>
+														<li class="dropdown yamm-fw">	
+															<%=link_to t(:menu_d), contact_path %>
 														</li>												
 													</ul>
 												</div><!-- end navbar-cell -->
