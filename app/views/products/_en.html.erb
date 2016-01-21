@@ -71,6 +71,7 @@
 	</div><!-- end container -->
 </section><!-- end section -->
 
+
 <section class="section grey box-shadow">
 	<div class="container">
 		<div class="section-title text-center">
@@ -86,17 +87,33 @@
 						<div class="magnifier">
 							<div class="visible-title1 clearfix">
 								<span class="pull-left">
-									<a data-rel="prettyPhoto" href="#"><i class="fa fa-search"></i></a>
+									<%= link_to "My superb link", '#', :'data-toggle' => 'modal', :'data-target' => "##{pdt.id}" %>
 								</span>									
 							</div><!-- end visible-title -->
 						</div><!-- end magnifier -->
 					</div><!-- end portfolio -->
-					<div class="invisible-title text-center">
-						<h4></h4>
-					</div><!-- end visible-title -->
 				</div>
-			<% end %>	
+			<% end %>
 		<% end %>
 		</div><!-- end row -->
 	</div><!-- end container -->
 </section><!-- end section -->
+<% @pdts.each do |pdt| %>
+	<% if pdt.img.present? %>
+		<div class="modal fade" id=<%= pdt.id %> tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel"><%= pdt.title %></h4>
+		      </div>
+		      <div class="modal-body">
+		        <%= image_tag pdt.img_url, class: 'img-responsive' %>
+		        <%= pdt.desc %>
+		        <%= pdt.detail %>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	<% end %>
+<% end %>
