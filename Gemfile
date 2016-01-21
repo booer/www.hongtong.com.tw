@@ -5,6 +5,7 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem "font-awesome-rails"
 gem 'bootstrap_form'
 gem "cocoon"
+gem 'colorbox-rails', '~> 0.1.2'
 
 #devise+omniauth
 gem 'devise'

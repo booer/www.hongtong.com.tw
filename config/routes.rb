@@ -8,8 +8,7 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'contact', to: 'letters#new'
   get 'index' , to: 'pages#index'
-  get 'en' , to: 'pages#en'
-  get 'cn' , to: 'pages#cn'
+
   resources :posts
   resources :letters
   resources :products

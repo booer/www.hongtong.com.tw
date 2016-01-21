@@ -87,7 +87,7 @@
 						<div class="magnifier">
 							<div class="visible-title1 clearfix">
 								<span class="pull-left">
-									<a data-rel="prettyPhoto" href=<%= pdt.img %>><i class="fa fa-search"></i></a>
+									<%= link_to "My superb link", pdt.img_url, :data => { :colorbox => true, :colorbox_height => '300px', :colorbox_width => '300px', :colorbox_iframe => true } %>
 								</span>									
 							</div><!-- end visible-title -->
 						</div><!-- end magnifier -->
@@ -102,7 +102,7 @@
 						<div class="magnifier">
 							<div class="visible-title1 clearfix">
 								<span class="pull-left">
-									<a data-rel="prettyPhoto" href="upload/portfolio_11.png"><i class="fa fa-search"></i></a>
+									<%= link_to "My superb link", pdt.img_url(:info_r).to_s, :data => { :colorbox => true, :colorbox_height => '300px', :colorbox_width => '300px', :colorbox_iframe => true, :class => 'group3 cboxElement' } %>
 									
 								</span>
 								<span class="pull-right">
