@@ -74,25 +74,46 @@
 <section class="section grey box-shadow">
 	<div class="container">
 		<div class="section-title text-center">
-			<h4>最終完成品</h4>
+			<h4>加工成品</h4>
 			<hr>
 		</div><!-- end title -->
 		<div class="row">
 		<% @pdts.each do |pdt| %>
 			<% if pdt.img.present? %>
+
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<div class="portfolio-style-1 entry wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
 						<%= image_tag pdt.img_url(:info_r).to_s, class: 'img-responsive' %>
 						<div class="magnifier">
 							<div class="visible-title1 clearfix">
 								<span class="pull-left">
-									<a data-rel="prettyPhoto" href="#"><i class="fa fa-search"></i></a>
+									<a data-rel="prettyPhoto" href=<%= pdt.img %>><i class="fa fa-search"></i></a>
 								</span>									
 							</div><!-- end visible-title -->
 						</div><!-- end magnifier -->
 					</div><!-- end portfolio -->
 					<div class="invisible-title text-center">
 						<h4></h4>
+					</div><!-- end visible-title -->
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="portfolio-style-1 entry wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+						<%= image_tag pdt.img_url(:info_r).to_s, class: 'img-responsive' %>
+						<div class="magnifier">
+							<div class="visible-title1 clearfix">
+								<span class="pull-left">
+									<a data-rel="prettyPhoto" href="upload/portfolio_11.png"><i class="fa fa-search"></i></a>
+									
+								</span>
+								<span class="pull-right">
+									<a href="#"><i class="fa fa-heart"></i> 300</a>
+								</span>
+							</div><!-- end visible-title -->
+						</div><!-- end magnifier -->
+					</div><!-- end portfolio -->
+					<div class="invisible-title text-center">
+						<h4><a href="portfolio-single-1.html">Project Name</a></h4>
+						<small><a href="portfolio-gallery-wd-rs-3.html">Category</a></small>
 					</div><!-- end visible-title -->
 				</div>
 			<% end %>	

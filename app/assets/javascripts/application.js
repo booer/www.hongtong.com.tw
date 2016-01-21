@@ -11,6 +11,8 @@
 // about supported directives.
 //
 
+//= require "main"
+//= require "jquery.prettyPhoto"
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
