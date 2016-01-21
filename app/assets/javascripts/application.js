@@ -15,10 +15,10 @@
 //= require jquery_ujs
 //= require_tree .
 //= require cocoon
-//= require colorbox-rails
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales
 //= require bootstrap-wysihtml5/locales/de-DE
 //= require bootstrap-wysihtml5/locales/es-ES
+//= require colorbox-rails
 //= require "quirk"
 //= require "bootstrap"
