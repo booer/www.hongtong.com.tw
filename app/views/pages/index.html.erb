@@ -48,7 +48,18 @@
 				<div class="col-md-3 col-sm-6">
 					<div class="service-style-1 nobg wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
 						<div class="icon-container border-radius">
-							<i class="fa fa-star"></i>
+							<% if service.id = 1 || service.id = 5 %>
+								<i class="fa fa-cogs"></i>
+							<% end %>
+							<% if service.id = 2 || service.id = 6 %>
+								<i class="fa fa-wrench"></i>
+							<% end %>
+							<% if service.id = 3 || service.id = 7 %>
+								<i class="fa fa-sun-o"></i>
+							<% end %>
+							<% if service.id = 4 || service.id = 8 %>
+								<i class="fa fa-industry"></i>
+							<% end %>
 						</div>
 						<p><strong><%= service.title.slice(0,10) %></strong></p>
 						<p><%= service.desc.slice(0,80) %></p>
