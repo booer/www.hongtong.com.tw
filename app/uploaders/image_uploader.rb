@@ -23,23 +23,23 @@ class ImageUploader < CarrierWave::Uploader::Base
   version :post_s do
     process :resize_to_fill => [360, 360]
   end
-  #文章內頁 橫幅
-  version :post_banner do
-    process :resize_to_fill => [750, 285]
-  end
   #產品列表 小圖
   version :product_list_s do
     process :resize_to_fill => [350, 350]
+  end
+  #文章內頁 橫幅
+  version :post_banner do
+    process :resize_to_fill => [750, 285]
   end
   #產品輪播圖
   version :info_banner do
     process :resize_to_fill => [570, 437]
   end  
-  #產品最終完成圖
+  #產品加工圖
   version :info_r do
     process :resize_to_fill => [263, 263]
   end
-  # 靜態頁面輪播圖
+  #頁面輪播圖(關於我們/歷史沿革)
   version :page do
     process :resize_to_fill => [555, 302]
   end
