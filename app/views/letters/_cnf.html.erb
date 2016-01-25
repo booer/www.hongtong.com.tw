@@ -1,0 +1,25 @@
+<div class="contact_form comment-form-wrap wow fadeIn">
+	<div id="message"></div>
+	<%= bootstrap_form_for @letter do |f| %>
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<%= f.text_field :personal_name, label: '姓名', class: 'form-control', placeholder: '輸入您的姓名' %>
+		</div>				
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<%= f.text_field :company_name, label: '公司名稱', class: 'form-control', placeholder: '輸入公司名稱' %>
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<%= f.text_field :mail, label: 'E-mail', class: 'form-control', placeholder: '輸入E-mail' %>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<%= f.text_field :company_address, label: '公司地址', class: 'form-control', placeholder: '輸入公司地址' %>
+		</div>
+
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<%= f.text_field :tel, label: '連絡電話', class: 'form-control', placeholder: '連絡電話' %>
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<%= f.text_area :msg, label: '您要輸入的訊息是？' %>
+			<%= f.submit '送出', class: 'btn btn-primary btn-block', id: 'submit' %>
+		</div>
+	<% end %>
+</div>
