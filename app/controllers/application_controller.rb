@@ -12,12 +12,13 @@ class ApplicationController < ActionController::Base
 		if params[:lang].present?
 			session[:lang] = params[:lang]
 		end
-		if session[:lang] == 'cn'
-			session[:lang] = 'cn'
-			I18n.locale = 'zh-TW'
-		else
+		
+		if session[:lang] == 'en'
 			session[:lang] = 'en'
 			I18n.locale = session[:lang]
+		else
+			session[:lang] = 'cn'
+			I18n.locale = 'zh-TW'
 		end
 	end
 	
