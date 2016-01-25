@@ -17,6 +17,6 @@ class Admin::SitesController < Admin::BaseController
 	
 	private
 	def site_params
-		params.require(:site).permit(:mail, :fax, :tel, :ga, :address)
+		params.require(:site).permit(:mail, :fax, :tel, :ga)
 	end
 end

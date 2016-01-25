@@ -8,7 +8,6 @@
       <%= bootstrap_form_for [:admin, @site] do |e| %>
         <%= e.text_field :fax %>
         <%= e.text_field :tel %>
-        <%= e.text_field :address %>
         <%= e.text_field :mail %>
         <%= e.submit '送出', class: 'btn btn-success' %>
       <% end %>
