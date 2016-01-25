@@ -1,5 +1,5 @@
 #站台基本資訊
-Site.create(mail: '', fax: '', tel: '', address: '')
+Site.create(mail: '', fax: '', tel: '')
 #客製化的頁面 - 關於我們&公司沿革 // 輪播圖庫
 (1..2).each do
 Page.create(page_cn:'', page_en:'')
