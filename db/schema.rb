@@ -95,7 +95,6 @@ ActiveRecord::Schema.define(version: 20160113025445) do
 
   create_table "sites", force: :cascade do |t|
     t.string   "tel"
-    t.string   "address"
     t.string   "fax"
     t.string   "mail"
     t.datetime "created_at", null: false
